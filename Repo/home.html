@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Anime Repo</title>
+<style>
+body { background-color: black}
+h1 { color:red; padding-left:10px }
+nav.horiz ul{margin: 0; padding:0; color: red}
+nav.horiz ul li {float:left; padding: 5px 10px; list-style:none; text-align: bottom; font-size: 24px}
+table {background-color: white;}
+</style>
+<script>
+function showGenre(){
+  document.getElementById("genre").style.display = "block";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("director").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+} 
+function showStudio(){
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "block";
+  document.getElementById("director").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+} 
+function showDirector(){
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("director").style.display = "block";
+  document.getElementById("tutorial").style.display = "none"; 
+} 
+function based(){
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("director").style.display = "none";
+  document.getElementById("tutorial").style.display = "block"; 
+}
+
+</script>
+</head>
+
+<body>
+<nav class = "horiz" >
+<ul>
+	<li style = "font-size: 34px"><a onclick="based()">The Anime Repo</a></li>
+	<li><a onclick="showGenre()">Genre</a></li>
+	<li><a onclick="showStudio()">Studio</a></li>
+	<li><a onclick="showDirector()">Director</a></li>
+
+	<li><input type = "text" placeholder= "Search..."><button type="button">Submit</button></li>
+</ul>
+</nav>
+
+<br><br><br><br>
+<table id = "genre" style="display:none"><!-->Shows  Genre Options---->
+<tr><td><h2>Genre</h2></td></tr>
+<tr><td>Action</td><td>Adventure</td></tr>
+<tr><td>Fantasy</td><td>Comedy</td></tr>
+<tr><td>Romance</td><td>Mystery</td></tr>
+
+
+</table>
+<table id = "studio" style="display:none"><!-->Shows  Studio Options---->
+<tr><td><h2>Studio</h2></td></tr>
+<tr><td>Action</td><td>Adventure</td></tr>
+<tr><td>Fantasy</td><td>Comedy</td></tr>
+<tr><td>Romance</td><td>Mystery</td></tr>
+</table>
+<table id ="director" style="display:none"> <!-->Shows  Director Options---->
+<tr><td><h2>Director</h2></td></tr>
+<tr><td>Action</td><td>Adventure</td></tr>
+<tr><td>Fantasy</td><td>Comedy</td></tr>
+<tr><td>Romance</td><td>Mystery</td></tr>
+
+
+</table>
+<p id="tutorial" style="background-color:white; display block">To use this database select on of the choices above and pick which option you are looking for </p>
+</body>
+</html>
