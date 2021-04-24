@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Anime Repo</title>
+<style>
+body { background-color: black; }
+h1 { color:red; padding-left:10px }
+nav.horiz ul{margin: 0; padding:0; color: red}
+nav.horiz ul li {float:left; padding: 5px 10px; list-style:none; text-align: bottom; font-size: 24px}
+label {background-color: white;}
+table {background-color: white;}
+genre { background-color: white;}
+
+
+</style>
+<script>
+    
+function showGenre(){
+  document.getElementById("director").style.display = "none";
+  document.getElementById("anime").style.display = "none";
+  document.getElementById("genre").style.display = "block";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+  document.getElementById("stream").style.display = "none";
+} 
+function showStudio(){
+  document.getElementById("director").style.display = "none";
+  document.getElementById("anime").style.display = "none";
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "block";
+  document.getElementById("tutorial").style.display = "none"; 
+  document.getElementById("stream").style.display = "none";
+} 
+function showDirector(){
+  document.getElementById("director").style.display = "block";
+  document.getElementById("anime").style.display = "none";
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+  document.getElementById("stream").style.display = "none";
+} 
+function showAnime(){
+  document.getElementById("anime").style.display = "block";
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("director").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+  document.getElementById("stream").style.display = "none";
+} 
+function showService(){
+  document.getElementById("director").style.display = "none";
+  document.getElementById("anime").style.display = "none";
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("tutorial").style.display = "none"; 
+  document.getElementById("stream").style.display = "block";
+} 
+function based(){
+  document.getElementById("genre").style.display = "none";
+  document.getElementById("studio").style.display = "none";
+  document.getElementById("director").style.display = "none";
+  document.getElementById("tutorial").style.display = "block"; 
+  document.getElementById("anime").style.display = "none";
+  document.getElementById("stream").style.display = "none";
+}
+
+</script>
+</head>
+
+<body>
+<nav class = "horiz" >
+<ul>
+	<li style = "font-size: 34px"><a onclick="based()">The Anime Repo</a></li>
+	<li><a onclick="showGenre()">Genre</a></li>
+	<li><a onclick="showStudio()">Studio</a></li>
+	<li><a onclick="showDirector()">Director</a></li>
+	<li><a onclick="showAnime()">Anime</a></li>
+	<li><a onclick="showService()">Stream</a></li>
+</ul>
+</nav>
+
+<br><br><br><br>
+
+<nav id = "genre" style="display:none">
+	<p style="background-color: white"> Add new Genre</p>
+
+	<form action="insert.php" method="post">
+		<p>
+		<label for = "genre_name">Genre Name:</label>
+		<input type="text" name="genre_name" id = "genreName">
+		</p>
+	
+		<input type = "submit" value= "Submit">
+	</form>
+
+</nav>
+    
+<nav id = "stream" style = "display:none">
+        <p style="background-color: aqua"> Remove Streaming Service</p>
+        <form action="delete.php" method = "post">
+            <p>
+                <label for = "serviceID"> Stream Name: </label>
+                <input type = "text" name = "serviceID" id = "streamName">
+            </p>
+            
+            <input type = "submit" value = "Submit">
+        </form>
+</nav>
+
+<nav id="director" style="display:none">
+	<p style="background-color: white"> Add new director</p>
+	<form action="insert.php" method="post">
+
+		<p>
+			<label for = "director_name">Directoy Name:</label>
+			<input type="text" name="director_name" id = "directorName">
+		</p>
+	
+		<input type = "submit" value= "Submit">
+	
+	</form>
+
+</nav>
+
+<nav id = "studio" style="display:none">
+	<p style="background-color: white"> Add new studio</p>
+	<form action = "insert.php" method="post">
+		<p>
+			<label for = "studio_name">Studio Name: </label>
+			<input type="text" name="studio_name" id = "studioName">
+		</p>
+	
+		<input type="submit" value="Submit">
+	</form>
+
+</nav>
+    
+
+<nav id="anime" style="display:none">
+	<nav> <!-- INSERT ANIME -->
+	<p style="background-color: white"> Add new anime</p>
+	<form action = "insert.php" method="post">
+		<p> <!-- English Name -->
+			<label for = "anime_nameENG">Anime EnGLish Name: </label>
+			<input type="text" name="anime_nameENG" id = "animeNameENG">
+		</p>
+		
+		<p><!-- Relesae Date -->
+			<label for = "anime_date">Relesae Date: </label>
+			<input type="date" name="anime_date" id = "animeDate">
+		</p>
+		
+		<p><!-- Anime Studio ID -->
+			<label for = "anime_studio_ID">Studio ID: </label>
+			<input type="number" name="anime_studio_ID" id = "anime_studio">
+		</p>
+		
+		<p><!-- Anime_Director_ID-->
+			<label for = "anime_director_ID">Director ID: </label>
+			<input type="number" name="anime_director_ID" id = "animeDirector">
+		</p>
+		
+		<p><!--Anime Maturity -->
+			<label for = "anime_maturity">Maturity </label>
+			<input type="text" name="anime_maturity" id = "animeMaturity">
+		</p>
+	
+		<input type="submit" value="Submit">
+	</form>
+	</nav>
+    
+	<nav><!-- LINK Genre AND ANIME -->
+	<p style="background-color: white"> Assign Genre to Anime</p>
+
+	<form action="insert.php" method="post">
+		<p>
+		<label for = "genre_id">Genre Name:</label>
+		<input type="number" name="genre_id" id = "genreid">
+		</p>
+		
+		<p>
+		<label for = "anime_ID">Anime Name:</label>
+		<input type="number" name="anime_ID" id = "anime_ID">
+		</p>
+	
+		<input type = "submit" value= "Submit">
+	</form>
+	
+	</nav>
+
+</nav>
+
+</body>
+</html>
