@@ -40,7 +40,16 @@ a { color: red;}
 <br><br>
 <p style="color:red;font-size:24px">ANIME</p>
 <?php
-session_start();
+ob_start();
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="123abc";
+$dbname="mydb";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+	or die ('Could not connect to the database server' . mysqli_connect_error());
 
 if( isset($_GET['search']) ){
     $name = mysqli_real_escape_string($con, htmlspecialchars($_GET['search']));

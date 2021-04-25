@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 
@@ -17,37 +17,33 @@ genre {color: white;}
 </head>
 
 <body>
+
 <nav class = "horiz" >
 <ul>
-	<li style = "font-size: 34px"><a onclick="based()">The Anime Repo:</a></li>
-	<li style = "font-size: 34px"> Update Page</li>
+	<li style = "font-size: 34px"><a href="http://localhost/REPO/home_update.php">The Anime Repo</a></li>
+	<li><a href="http://localhost/REPO/update_Maturity.php">Maturity</a></li>
+	<li><a href="http://localhost/REPO/update_AirDate.php">Air Date</a></li>
+	<li><a href="http://localhost/REPO/update_Director.php">Director</a></li>
+	<li><a href="http://localhost/REPO/update_EnglishName.php">English Name</a></li>
+	<li><a href="http://localhost/REPO/update_Genre.php">Genre</a></li>
+	<li><a href="http://localhost/REPO/update_JapaneseName.php">Japanese Name</a></li>
+	<li><a href="http://localhost/REPO/update_Stream.php">Stream</a></li>
+	<li><a href="http://localhost/REPO/update_Studio.php">Studio</a></li>
 </ul>
 </nav>
-
-<br>
-<br>
-<br>
-<br>
-
-
- <nav id="update" style="display:block">
-	<h3>Update Anime Database</h3>
-	<form action = "update.php" method="post">
-        
+<br><br><br>
+<form action = "update.php" method="post">
 		<p>
-			<label for = "anime_nameENG">Anime ID: </label>
-			<input type="text" name="search9" id = "animeNameENG">
+			<label for = "anime_director">Director ID: </label>
+			<input type="text" name="search5" id = "animeDirector">
             <br>
             <br>
-            <label for = "anime_nameENG_update">Updated Anime English Name: </label>
-            <input type="text" name="search10" id = "animeNameENG_update">
+            <label for = "anime_director_update"> Updated Director Name: </label>
+			
+            <input type="text" name="search6" id = "animeDirector_update">
 		</p>
-		
+		<input type="hidden" name="page" value="director">
 		<input type="submit" value="Submit">
 	</form>
-    
-     
-</nav>
-
 </body>
 </html>

@@ -30,55 +30,11 @@ a { color: red;}
 
 <br><br><br><br>
 <p style="color:red;font-size:24px">HOME[Search]</p>
-<p> To Search entry's in the database click this <a href="http://localhost/REPO/home_search.php">LINK</a> </p>
-<p> To insert new entry's click this <a href="http://localhost/REPO/home_insert.php">LINK</a></p>
-<p> To delete new entry's  click this <a href="http://localhost/REPO/home_delete.php">LINK</a></p>
-<p>To Update entry's click this <a href="http://localhost/REPO/home_update.php">LINK</a></p>
-<p>Administrator login</p>
+<p>To change the database <a href="http://localhost/REPO/login.php">login</a></p>
+<p>To make an Admin Account click this<a href="http://localhost/REPO/account_create.php"> LINK</a></p>
 <nav id = "director">
-<form  method="POST">
-<p>
-<label>UserName:</label>
-<input type="text" name="admin">
-</p>
-<p>
-<label>Password:</label>
-<input type="text" name="pass">
-</p>
-<input type = "submit" value= "Submit">
-</form>
 </nav>
-<?php
-$host="localhost";
-$port=3306;
-$socket="";
-$user="root";
-$password="123abc";
-$dbname="mydb";
 
-$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-    or die ('Could not connect to the database server' . mysqli_connect_error());
-	
- if (isset($_POST['login'])) {
-        $username = $_POST['admin'];
-        $password = $_POST['pass'];
-        $query = $connection->prepare("SELECT * FROM admin WHERE Username=:username");
-        $query->bindParam("username", $username, PDO::PARAM_STR);
-        $query->execute();
-        $result = $query->fetch(PDO::FETCH_ASSOC);
-        if (!$result) {
-            echo "<p>Username password combination is wrong!</p>";
-        } else {
-            if (password_verify($password, $result['password'])) {
-                
-                echo "<p>Congratulations, you are logged in!</p>";
-            } else {
-                echo "<p>Username password combination is wrong!</p>";
-			}
- }}
-// Close connection
-mysqli_close($con);
-?>
 
 </body>
 </html>

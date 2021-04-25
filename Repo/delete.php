@@ -17,7 +17,10 @@ $anime = mysqli_real_escape_string($con, $_REQUEST['anime_ID']);
 	// Attempt insert query execution
 
 
-	$sql = "DELETE INTO anime_stream (Anime,Stream) VALUE ('$anime','$stream')";
+	$sql = "DELETE from anime_stream where Anime = '$anime' and Stream = '$stream'";
+	if(mysqli_query($con, $sql)){
+		echo "Records added successfully.";
+	}
 	header("location: delete_stream.php");
 	
 	

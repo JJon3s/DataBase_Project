@@ -31,45 +31,26 @@ a { color: red;}
 
 <br><br><br><br>
 
-<p> Add new anime</p>
-	<form action = "insert.php" method="post">
-		<p> <!-- English Name -->
-			<label for = "anime_nameENG">Anime English Name: </label>
-			<input type="text" name="anime_nameENG" id = "animeNameENG">
-		</p>
-		<p> <!-- Japanese Name -->
-			<label for = "anime_nameJPN">Anime Japanese Name: </label>
-			<input type="text" name="anime_nameJPN" id = "animeNameJPN">
-		</p>
-		
-		
-		<p><!-- Relesae Date -->
-			<label for = "anime_date">Relesae Date: </label>
-			<input type="date" name="anime_date" id = "animeDate">
+
+	<nav><!-- LINK Genre AND ANIME -->
+	
+	<p> Assign Genre to Anime</p>
+
+	<form action="insert.php" method="post">
+		<p>
+		<label for = "genre_id">Genre Name:</label>
+		<input type="number" name="genre_id" id = "genreid">
 		</p>
 		
-		<p><!-- Anime Studio ID -->
-			<label for = "anime_studio_ID">Studio ID: </label>
-			<input type="number" name="anime_studio_ID" id = "anime_studio">
+		<p>
+		<label for = "anime_ID">Anime Name:</label>
+		<input type="number" name="anime_ID" id = "anime_ID">
 		</p>
-		
-		<p><!-- Anime_Director_ID-->
-			<label for = "anime_director_ID">Director ID: </label>
-			<input type="number" name="anime_director_ID" id = "animeDirector">
-		</p>
-		
-		<p><!--Anime Maturity -->
-			<label for = "anime_maturity">Maturity: </label>
-			<input type="text" name="anime_maturity" id = "animeMaturity">
-		</p>
-		
-		<input type="hidden" name="page" value="anime">
-		<input type="submit" value="Submit">
+		<input type="hidden" name="page" value="anime_g">
+		<input type = "submit" value= "Submit">
 	</form>
 	
-	<p> to link anime to streaming service <a href="http://localhost/REPO/insert_anime_s.php">LINK</a></p>
-	<p> to link anime to genre <a href="http://localhost/REPO/insert_anime_g.php">LINK</a></p>
-
+	</nav>
 
 
 <nav id = "director">

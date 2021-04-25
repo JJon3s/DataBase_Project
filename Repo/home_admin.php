@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,28 +20,21 @@ a { color: red;}
 <body>
 <nav class = "horiz" >
 <ul>
-	<li style = "font-size: 34px"><a href="http://localhost/REPO/home_insert.php">The Anime Repo</a></li>
-	<li><a href="http://localhost/REPO/insert_genre.php">Genre</a></li>
-	<li><a href="http://localhost/REPO/insert_studio.php">Studio</a></li>
-	<li><a href="http://localhost/REPO/insert_director.php">Director</a></li>
-	<li><a href="http://localhost/REPO/insert_stream.php">Stream</a></li>
-	<li><a href="http://localhost/REPO/insert_anime.php">Anime</a></li>
-	
+	<li style = "font-size: 34px">The Anime Repo</li>
 </ul>
 </nav>
 
 <br><br><br><br>
-
-
-<nav id = "director">
-<p style="color:red;font-size:24px">HOME[Insert]</p>
+<p style="color:red;font-size:24px">HOME[ADMIN PANEL]</p>
 <p> To  log out and search entry's in the database click this <a href="http://localhost/REPO/home_search.php">LINK</a> </p>
 <p> To insert new entry's click this <a href="http://localhost/REPO/home_insert.php">LINK</a></p>
 <p> To delete new entry's  click this <a href="http://localhost/REPO/home_delete.php">LINK</a></p>
 <p> To update entry's click this <a href="http://localhost/REPO/home_update.php">LINK</a> </p>
 
+<nav id = "director">
 
 </nav>
+
 
 </body>
 </html>

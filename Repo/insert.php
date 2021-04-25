@@ -23,14 +23,9 @@ if($page == "genre"){
 
 
 	if(mysqli_query($con, $sql)){
-		echo "Records added successfully.";
-	
-
-
-	
+		echo "Records added successfully.";	
 	} else{
 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
-	
 	}
 	
 	header("location: insert_genre.php");
@@ -44,13 +39,8 @@ if($page == "genre"){
 	$sql = "INSERT INTO studio (studio_name) VALUE ('$studio')";
 	if(mysqli_query($con, $sql)){
 		echo "Records added successfully.";
-	
-
-
-	
 	} else{
 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
-	
 	}
 	
 	header("location: insert_studio.php");
@@ -64,10 +54,6 @@ if($page == "genre"){
 	$sql = "INSERT INTO director (director_name) VALUE ('$director')";
 	if(mysqli_query($con, $sql)){
 		echo "Records added successfully.";
-	
-
-
-	
 	} else{
 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
 	
@@ -83,12 +69,9 @@ if($page == "genre"){
 	$sql = "INSERT INTO streaming_service (stream_name) VALUE ('$stream')";
 	if(mysqli_query($con, $sql)){
 		echo "Records added successfully.";
-	
-
-
 	}
-	header("location: insert_stream.php");
-	}elseif($page== "anime"){
+		header("location: insert_stream.php");
+}elseif($page== "anime"){
 		$nameENG = mysqli_real_escape_string($con, $_REQUEST['anime_nameENG']);
 		$nameJPN = mysqli_real_escape_string($con, $_REQUEST['anime_nameJPN']);
 		$Date = mysqli_real_escape_string($con, $_REQUEST['anime_date']);
@@ -99,41 +82,43 @@ if($page == "genre"){
 		$sql = "INSERT INTO anime (Name_ENG,AirDate,Name_JPN,Maturity,Director_ID,Studio_ID) VALUE ('$nameENG','$Date','$nameJPN','$Mature','$Director','$Studio')";
 		if(mysqli_query($con, $sql)){
 		echo "Records added successfully.";
-	
-
-
-	}
-	header("location: insert_anime.php");
+		}
+		header("location: insert_anime.php");
 	}elseif($page=="anime_s"){
 		$Stream = mysqli_real_escape_string($con, $_REQUEST['stream_ID']);
 		$anime = mysqli_real_escape_string($con, $_REQUEST['anime_ID']);
 		
-		$sql = "insert INTO anime_stream (Anime,Stream) value('$anime','$Stream')"
+		$sql = "insert INTO anime_stream (Anime,Stream) value('$anime','$Stream')";
+		if(mysqli_query($con, $sql)){
+		echo "Records added successfully.";
+		}
+		
+		header("location: insert_anime_s.php");
+		
+	}elseif($page=="anime_g"){
+		$genre = mysqli_real_escape_string($con, $_REQUEST['genre_ID']);
+		$anime = mysqli_real_escape_string($con, $_REQUEST['anime_ID']);
+		$sql = "insert INTO anime_genre(Anime,Genre) value('$anime','$genre')";
+		if(mysqli_query($con, $sql)){
+		echo "Records added successfully.";
+	}
+		header("location: insert_anime_g.php");
+		
+	}elseif($page == "create"){
+		
+		$user = mysqli_real_escape_string($con, $_REQUEST['txt_uname']);
+		$pass = mysqli_real_escape_string($con, $_REQUEST['txt_pwd']);
+		$sql = "insert INTO admin(Username,Password) value('$user','$pass')";
 		if(mysqli_query($con, $sql)){
 		echo "Records added successfully.";
 	
 
 
 	}
-	header("location: insert_anime.php");
-		
-	}elseif($page=="anime_g"){
-		$genre = mysqli_real_escape_string($con, $_REQUEST['genre_ID']);
-		$anime = mysqli_real_escape_string($con, $_REQUEST['anime_ID']);
-		$sql = "insert INTO anime_genre(Anime,Genre) value('$anime','$genre')";
-		header("location: insert_anime.php");
-		
-	}
-
+		header("location: home_search.php");
 	
-	
+}
 
-
-
-
-
-
- 
 // Close connection
 mysqli_close($con);
 ?>

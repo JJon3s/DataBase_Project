@@ -30,10 +30,10 @@ a { color: red;}
 
 <nav id = "director">
 <p style="color:red;font-size:24px">HOME[Delete]</p>
-<p> To Search entry's in the database click this <a href="http://localhost/REPO/home_search.php">LINK</a></p>
+<p> To  log out and search entry's in the database click this <a href="http://localhost/REPO/home_search.php">LINK</a> </p>
 <p> To insert new entry's click this <a href="http://localhost/REPO/home_insert.php">LINK</a></p>
 <p> To delete new entry's  click this <a href="http://localhost/REPO/home_delete.php">LINK</a></p>
-<p>To Update entry's click this <a href="http://localhost/REPO/home_update.php">LINK</a></p>
+<p> To update entry's click this <a href="http://localhost/REPO/home_update.php">LINK</a> </p>
 
 
 </nav>
