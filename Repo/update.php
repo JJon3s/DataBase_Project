@@ -20,7 +20,7 @@ if( $page=="genre"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_Genre.php");
 }
 elseif( $page=="studio"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search3']);
@@ -29,7 +29,7 @@ elseif( $page=="studio"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_Studio.php");
 }
 elseif( $page=="director"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search5']);
@@ -38,7 +38,7 @@ elseif( $page=="director"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_Director.php");
 }
 elseif( $page=="stream"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search7']);
@@ -47,7 +47,7 @@ elseif( $page=="stream"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_Stream.php");
 }
 elseif( $page=="Name_ENG"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search9']);
@@ -56,7 +56,7 @@ elseif( $page=="Name_ENG"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_EnglishName.php");
 }
 
 elseif( $page=="Name_JPN"){
@@ -66,7 +66,7 @@ elseif( $page=="Name_JPN"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_JapaneseName.php");
 }
 elseif( $page=="Maturity"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search13']);
@@ -75,7 +75,7 @@ elseif( $page=="Maturity"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_Maturity.php");
 }
 elseif( $page=="AirDate"){
 	$name = mysqli_real_escape_string($con, $_REQUEST['search15']);
@@ -84,7 +84,7 @@ elseif( $page=="AirDate"){
 		if(mysqli_query($con, $sql)){
         		echo "Records added successfully.";
     		}
-	header("location: update_DB.php");
+	header("location: update_AirDate.php");
 }
 // Close connection
 mysqli_close($con);
