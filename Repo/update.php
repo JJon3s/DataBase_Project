@@ -1,15 +1,14 @@
 <?php
-$db_hostname = 'localhost';
-$db_username = 'demo';
-$db_password = 'demo';
-$db_database = 'demo';
+ob_start();
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="123abc";
+$dbname="mydb";
 
-// Database Connection String
-$con = mysql_connect($db_hostname,$db_username,$db_password);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+    or die ('Could not connect to the database server' . mysqli_connect_error());
 if( $page=="genre"){
     $name = mysqli_real_escape_string($con, $_REQUEST['search']));
 	$secsearch = mysqli_real_escape_string($con, $_REQUEST['search2']));
@@ -69,5 +68,5 @@ if( $page=="AirDate"){
 
 }
 // Close connection
-mysqli_close($conn);
+mysqli_close($con);
 ?>
