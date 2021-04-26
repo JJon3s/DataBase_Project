@@ -1,0 +1,16 @@
+﻿Step one: Download MySQL Workbench with this link and follow the steps. Link: https://dev.mysql.com/downloads/mysql/
+
+
+Step two: If you do not have notepad++, download it with this link: https://notepad-plus-plus.org/downloads/
+
+
+Step three: Download the file in the repository named “AnimeRepo.sql”
+
+
+Step 4: Create a new tab in mysql workbench to copy and paste the data in the “AnimeRepo.sql” to a new sql file. (this will create the database)
+
+
+Step 5: Download the rest of the files from the repository locally to your machine and your machine at minimum is required to have basic internet access, browser for viewing web pages, 4gb of ram and enough storage to download all the files.
+
+
+Step 6: Edit the downloaded php files in notepad++ to accompany your database's hostname, username and password so that it may link to the new database you just made.
